@@ -3,7 +3,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Helpers\ValidationRules as Validate;
 use App\Models\Book;
-use Core\Middleware\AuthMiddleware;
+use App\Middleware\AuthMiddleware;
 class BooksController extends BaseController{
 
     public $request;

@@ -2,7 +2,7 @@
 
 // AuthMiddleware.php
 
-namespace Core\Middleware;
+namespace App\Middleware;
 
 use Core\Config;
 

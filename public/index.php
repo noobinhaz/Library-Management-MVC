@@ -2,8 +2,8 @@
 
 // index.php
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../app/middleware/cors.php';
 use App\controllers\AuthorsController;
-use Core\DB;
 use App\Controllers\AuthController;
 use App\Controllers\BooksController;
 use App\Controllers\BorrowsController;
@@ -79,5 +79,5 @@ elseif($requestMethod=='POST' && $requestUri == '/login'){
 
 else {
     http_response_code(404);
-    echo 'Not Found Bruh';
+    echo 'Not Found';
 }

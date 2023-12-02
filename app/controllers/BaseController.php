@@ -1,9 +1,5 @@
 <?php
 namespace App\Controllers;
-use App\Middleware\Cors;
-
-// AuthorsController.php
-
 Abstract class BaseController {
 
     private $model;
@@ -23,13 +19,16 @@ Abstract class BaseController {
         $search = !empty($this->request['search']) ? $this->request['search'] : '';
         $limit = !empty($this->request['limit']) ? $this->request['limit'] : 10;
         $data = $this->model->getAll($page, $search, $limit);
-        // echo password_hash("password", PASSWORD_DEFAULT);
-        // header('Content-Type: application/json');
+        $total = $this->model->getTotal($search);
+
         http_response_code(200);
         echo json_encode([
             'isSuccess' => $data !== null,
             'message'   => $data !== null ? '' : 'No Data Found',
-            'data'      => ['data' => $data ]
+            'data'      => [
+                            'data' => $data, 
+                            'last_page' => ceil($total/$limit)  
+                        ]
         ]);
     }
 

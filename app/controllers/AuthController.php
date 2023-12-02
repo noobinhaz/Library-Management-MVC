@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use Core\DB;
 use core\Config;
 use App\Models\User;
 
@@ -20,8 +19,6 @@ class AuthController
         $search = !empty($request['search']) ? $request['search'] : '';
         $limit = !empty($request['limit']) ? $request['limit'] : 10;
         $data = $this->model->getAll($page, $search, $limit);
-        // echo password_hash("password", PASSWORD_DEFAULT);
-        // header('Content-Type: application/json');
         http_response_code(200);
         echo json_encode([
             'isSuccess' => $data !== null,

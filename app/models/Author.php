@@ -28,8 +28,8 @@ class Author
         $statement = "SELECT * FROM authors $searchCondition ORDER BY id DESC LIMIT $limit OFFSET $offset";
         $result = $db->query($statement);
 
+        $authors = [];
         if ($result && $result->num_rows > 0) {
-            $authors = [];
             while ($result_row = $result->fetch_assoc()) {
                 $author = [
                     'id'   => $result_row['id'],
@@ -41,6 +41,22 @@ class Author
         }
 
         return $authors;
+    }
+
+    public function getTotal($search)
+    {
+
+        $db = $this->db->connect();
+
+        $searchCondition = '';
+        if (!empty($search)) {
+            $searchCondition = " WHERE name LIKE '%$search%'";
+        }
+
+        $statement = "SELECT COUNT(*) AS total FROM authors $searchCondition ORDER BY id DESC";
+        $result = $db->query($statement);
+
+        return $result->fetch_assoc()['total'];
     }
     
     public function addNew($input)

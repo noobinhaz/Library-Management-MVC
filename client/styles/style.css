@@ -1,0 +1,207 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  overflow: hidden;
+}
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Add this CSS to style your book addition form */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+select {
+  width: 90%;
+  padding: 50px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* input[type="password"] {
+  width: 70%;
+  max-height: 10%;
+  padding: 10px 50px 10px 50px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+} */
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style the form container */
+#bookForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the top header section */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Center the form on the page */
+#bookForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Add margin and padding to form elements for better spacing */
+label,
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+input[type="submit"],
+input[type="password"],
+button[type="button"] {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Adjust styles for the submit button */
+input[type="submit"],
+button[type="button"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  background-color: red;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Add spacing between elements */
+br {
+  clear: both;
+}
+
+/* Style the container holding the form */
+#contentContainer {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.add {
+  color: green;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0; /* Add your desired background color */
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+#search {
+  min-width: 20px;
+  max-width: 200px; /* Adjust the width as needed */
+  padding: 8px; /* Add padding for better appearance */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+table {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 20px; /* Add some spacing between the input box and table */
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
