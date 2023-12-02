@@ -49,7 +49,7 @@ fetch("http://localhost:8000/authors?" + new URLSearchParams({
         for(let i = 1; i <= data.data.last_page; i++){
             let page = document.createElement('button');
             page.style = "margin-right: 5px;";
-            page.innerHTML = `<a href="authors.html?page=${i}&query=${search}" style="color: green;">${i}</a>`;
+            page.innerHTML = `<a href="authors.html?page=${i}" style="color: green;">${i}</a>`;
             paginator.append(page);
         }
 
