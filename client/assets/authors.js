@@ -11,7 +11,7 @@ function handleSearchInput(event) {
 }
 
 function fetchAuthors() {
-    let page = urlParams.get('page');
+    let page = urlParams.get('page') ?? 1;
 
 fetch("http://localhost:8000/authors?" + new URLSearchParams({
     page: page,
@@ -58,7 +58,7 @@ fetch("http://localhost:8000/authors?" + new URLSearchParams({
     }
     })
     .catch((error) => {
-    console.error("Fetch error:", error);
+        console.error("Fetch error:", error);
     });
 }
 
@@ -83,6 +83,41 @@ fetch("http://localhost:8000/authors/" + id, {
     });
 }
 
+function addAuthor(){
+    document
+        .getElementById("authorForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          
+          const formData = new FormData(this);
+
+          console.log(formData.entries());
+
+          // Send a POST request to the server with the form data
+          fetch("http://localhost:8000/authors", {
+            method: "POST",
+            body: formData,
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.isSuccess) {
+                alert("Author added successfully.");
+                history.back();
+              } else {
+                alert("Error adding author: " + data.message);
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("An error occurred while adding the author.");
+            });
+        });
+}
+
 window.addEventListener("load", fetchAuthors);
 
-searchInput.addEventListener("input", handleSearchInput);
+searchInput?.addEventListener("input", handleSearchInput);

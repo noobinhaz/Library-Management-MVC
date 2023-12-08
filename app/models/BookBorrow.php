@@ -46,6 +46,22 @@ class BookBorrow {
         return $borrows;
     }
 
+    public function getTotal($search)
+    {
+
+        $db = $this->db->connect();
+
+        $searchCondition = '';
+        if (!empty($search)) {
+            $searchCondition = " WHERE name LIKE '%$search%'";
+        }
+
+        $statement = "SELECT COUNT(*) AS total FROM authors $searchCondition ORDER BY id DESC";
+        $result = $db->query($statement);
+
+        return $result->fetch_assoc()['total'];
+    }
+
     public function addNew($input)
     {
         $db = $this->db->connect();

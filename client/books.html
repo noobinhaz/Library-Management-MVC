@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Navigation</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="assets/auth.js"></script>
+  </head>
+  <body>
+    <style>
+      #pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+    </style>
+    <div>
+      <nav>
+        <div>
+          <a href="authors.html?page=1" id="authors">Authors</a>
+          <a href="books.html?page=1" id="books">Books</a>
+          <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+          <a href="addBooks.html" class="add">Add Books</a>
+        </div>
+        <div>
+          <a href="#" id="logout" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+
+      <div id="search-container">
+        <label for="search">Search: </label>
+        <input type="text" id="search" placeholder="write query" />
+      </div>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Author Name</th>
+            <th>Release Date</th>
+            <th>ISBN Code</th>
+            <th>SBN Code</th>
+            <th>Shelf Position</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="booksTableBody"></tbody>
+      </table>
+
+      <div id="pagination"></div>
+    </div>
+    <script src="assets/books.js"></script>
+  </body>
+</html>

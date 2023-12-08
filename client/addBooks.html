@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Navigation</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="assets/auth.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div>
+          <a href="authors.html?page=1" id="authors">Authors</a>
+          <a href="books.html?page=1" id="books">Books</a>
+          <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+          <a href="addBooks.html" class="add">Add Books</a>
+        </div>
+        <div>
+          <a href="#" id="logout" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+
+      <form id="bookForm">
+        <label for="name">Title:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="version">Version:</label>
+        <input type="text" id="version" name="version" required />
+        <br />
+        <label for="author">Author:</label>
+        <select id="author" name="author_id" required></select>
+        <br />
+        <label for="isbnCode">ISBN Code:</label>
+        <input type="text" id="isbnCode" name="isbn_code" required />
+        <br />
+        <label for="sbnCode">SBN Code:</label>
+        <input type="text" id="sbnCode" name="sbn_code" required />
+        <br />
+        <label for="releaseDate">Release Date:</label>
+        <input type="date" id="releaseDate" name="release_date" required />
+        <br />
+        <label for="shelfPosition">Shelf Position:</label>
+        <input type="text" id="shelfPosition" name="shelf_position" required />
+        <br />
+        <input type="submit" value="Add Book" onsubmit="addBooks()" />
+        <button onclick="history.back()" type="button">Back</button>
+      </form>
+    </div>
+    <script src="assets/books.js"></script>
+  </body>
+</html>

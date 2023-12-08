@@ -47,6 +47,23 @@ class Book {
         return $books;
     }
 
+    public function getTotal($search)
+    {
+
+        $db = $this->db->connect();
+
+        $searchCondition = '';
+        
+        if (!empty($search)) {
+            $searchCondition = " WHERE books.name LIKE '%$search%' OR isbn_code LIKE '%$search%' OR sbn_code LIKE '%$search%' ";
+        }
+
+        $statement = "SELECT COUNT(*) AS total FROM books $searchCondition ORDER BY id DESC;";
+        $result = $db->query($statement);
+
+        return $result->fetch_assoc()['total'];
+    }
+
     public function addNew($input)
     {
         $db = $this->db->connect();

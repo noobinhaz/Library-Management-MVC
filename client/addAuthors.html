@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Navigation</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="assets/auth.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div>
+          <a href="authors.html?page=1" id="authors">Authors</a>
+          <a href="books.html?page=1" id="books">Books</a>
+          <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+          <a href="addAuthors.html" class="add">Add Authors</a>
+        </div>
+        <div>
+          <a href="#" id="logout" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+
+      <div id="addAuthor">
+        <h1>Add Author</h1>
+        <form id="authorForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <br />
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+          <br />
+          <input
+            type="submit"
+            value="Add Author"
+            id="save-author"
+            onclick="addAuthor()"
+          />
+          <button type="button" onclick="history.back()">Back</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/authors.js"></script>
+  </body>
+</html>
