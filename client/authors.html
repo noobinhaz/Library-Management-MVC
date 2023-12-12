@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library Navigation</title>
+    <title>Authors</title>
     <link rel="stylesheet" href="styles/style.css" />
     <script src="assets/auth.js"></script>
   </head>
-  <body>
+  <body onload="fetchAuthors();">
     <style>
       #pagination {
         display: flex;
@@ -22,6 +22,7 @@
           <a href="authors.html?page=1" id="authors">Authors</a>
           <a href="books.html" id="books">Books</a>
           <a href="borrow.html" id="borrow">Borrow Book</a>
+          <a href="users.html?page=1" id="users">Users</a>
           <a href="addAuthors.html" class="add">Add Authors</a>
         </div>
         <div>

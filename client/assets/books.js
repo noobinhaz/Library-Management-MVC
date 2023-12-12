@@ -123,6 +123,7 @@ function populateAuthorDropdown() {
   }
 
   function addBooks(){
+    console.log("here")
       document
         .getElementById("bookForm")
         .addEventListener("submit", function (e) {
@@ -133,12 +134,15 @@ function populateAuthorDropdown() {
           fetch("http://localhost:8000/books", {
             method: "POST",
             body: formData,
+            headers: {
+              Authorization: `Bearer ${token}`,
+          },
           })
             .then((response) => response.json())
             .then((data) => {
               if (data.isSuccess) {
                 alert("Book added successfully.");
-                window.location.reload();
+                history.back();
               } else {
                 alert(data.message);
                 console.log(data.data);
@@ -151,8 +155,6 @@ function populateAuthorDropdown() {
         });
   }
 
-  populateAuthorDropdown();
-
-window.addEventListener("load", fetchBooks);
+  // populateAuthorDropdown();
 
 searchInput?.addEventListener("input", handleSearchInput);

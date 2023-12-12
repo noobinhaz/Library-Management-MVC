@@ -67,7 +67,7 @@ class BookBorrow {
         $db = $this->db->connect();
         try {
             //code...
-            $user = $input['user'];
+            $user = $input['user_id'];
             $statement = "SELECT id FROM users where email = '$user'";
             $result = $db->query($statement);
             $result_row = $result->fetch_assoc();

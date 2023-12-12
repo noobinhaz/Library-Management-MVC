@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script src="assets/auth.js"></script>
   </head>
-  <body>
+  <body onload="populateAuthorDropdown()">
     <div>
       <nav>
         <div>
           <a href="authors.html?page=1" id="authors">Authors</a>
           <a href="books.html?page=1" id="books">Books</a>
           <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+          <a href="users.html?page=1" id="users">Users</a>
           <a href="addBooks.html" class="add">Add Books</a>
         </div>
         <div>
@@ -21,7 +22,7 @@
         </div>
       </nav>
 
-      <form id="bookForm">
+      <form id="bookForm" method="POST">
         <label for="name">Title:</label>
         <input type="text" id="name" name="name" required />
         <br />
@@ -43,7 +44,12 @@
         <label for="shelfPosition">Shelf Position:</label>
         <input type="text" id="shelfPosition" name="shelf_position" required />
         <br />
-        <input type="submit" value="Add Book" onsubmit="addBooks()" />
+        <input
+          type="submit"
+          value="Add Book"
+          id="save-book"
+          onclick="addBooks()"
+        />
         <button onclick="history.back()" type="button">Back</button>
       </form>
     </div>

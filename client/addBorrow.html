@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Borrow Entry</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="assets/auth.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div>
+          <a href="authors.html?page=1" id="authors">Authors</a>
+          <a href="books.html?page=1" id="books">Books</a>
+          <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+          <a href="users.html?page=1" id="users">Users</a>
+          <a href="addBorrow.html" class="add">Add Borrow</a>
+        </div>
+        <div>
+          <a href="#" id="logout" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+      <h1>Add Borrow Entry</h1>
+      <form id="addBorrowForm" method="post">
+        <label for="user_id">User Email:</label>
+        <input type="email" id="user_id" name="user_id" required />
+
+        <label for="book_id">Book:</label>
+        <select id="book_id" name="book_id" required></select>
+
+        <label for="borrow_date">Borrow Date:</label>
+        <input type="date" id="borrow_date" name="borrow_date" required />
+
+        <label for="return_date">Return Date:</label>
+        <input type="date" id="return_date" name="return_date" />
+
+        <input type="submit" value="Add Borrow" onclick="addBorrow()" />
+        <button onclick="history.back()" type="button">Back</button>
+      </form>
+    </div>
+
+    <script src="assets/borrow.js"></script>
+  </body>
+</html>

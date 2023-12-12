@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Borrow Entry</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="assets/auth.js"></script>
+  </head>
+  <body onload="fetchBorrowDetails()">
+    <nav>
+      <div>
+        <a href="authors.html?page=1" id="authors">Authors</a>
+        <a href="books.html?page=1" id="books">Books</a>
+        <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
+        <a href="users.html?page=1" id="users">Users</a>
+        <a href="addBorrow.html" class="add">Add Borrow</a>
+      </div>
+      <div>
+        <a href="#" id="logout" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+    <h1>Edit Borrow Entry</h1>
+    <form id="editBorrowForm" method="post">
+      <input type="hidden" id="borrowId" name="id" />
+      <label for="user">User (Email):</label>
+      <input type="email" id="user" name="user" disabled />
+      <br />
+
+      <label for="book_id">Book:</label>
+      <select id="book_id" name="book_id" disabled>
+        <!-- Options will be populated by JavaScript -->
+      </select>
+      <br />
+
+      <label for="borrow_date">Borrow Date:</label>
+      <input type="date" id="borrow_date" name="borrow_date" disabled />
+      <br />
+
+      <label for="return_date">Return Date:</label>
+      <input type="date" id="return_date" name="return_date" />
+      <br />
+
+      <input
+        type="submit"
+        value="Update"
+        id="submit-edit"
+        onsubmit="updateBorrow()"
+      />
+    </form>
+
+    <script src="assets/borrow.js"></script>
+  </body>
+</html>

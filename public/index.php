@@ -57,7 +57,7 @@ elseif (preg_match('/^\/books\/(\d+)$/', $requestUri, $matches) && $requestMetho
 elseif (preg_match('/^\/borrows\/(\d+)$/', $requestUri, $matches) && $requestMethod === 'GET') {
     $borrowId = $matches[1];  
     (new BorrowsController($_GET))->show($borrowId);
-}elseif($requestUri == '/books' && $_SERVER['REQUEST_METHOD'] == 'POST'){
+}elseif($requestUri == '/borrows' && $_SERVER['REQUEST_METHOD'] == 'POST'){
     $request = array_merge($_GET, $_POST);
     (new BorrowsController($request))->store();
 }elseif(preg_match("/borrows\/(\d+)/", $requestUri, $matches) && $requestMethod == 'PATCH'){

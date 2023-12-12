@@ -66,6 +66,7 @@ Abstract class BaseController {
                 'data'      => $this->request 
             ]);
         } catch (\Throwable $th) {
+            http_response_code(422);
             echo json_encode([
                 'isSuccess' => false,
                 'message'   => $th->getMessage(),

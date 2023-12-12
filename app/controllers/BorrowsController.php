@@ -19,15 +19,12 @@ class BorrowsController extends BaseController{
         
         return [
             'user_id' => function($value) {
-                return Validate::integer($value, true);
+                return Validate::string($value, true);
             },
             'book_id' => function($value) {
                 return Validate::integer($value, true);
             },
             'borrow_date' => function($value) {
-                return Validate::date($value);
-            },
-            'return_date' => function ($value) {
                 return Validate::date($value);
             },
         ];

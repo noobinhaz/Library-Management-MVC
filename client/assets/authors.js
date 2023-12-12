@@ -92,9 +92,6 @@ function addAuthor(){
           
           const formData = new FormData(this);
 
-          console.log(formData.entries());
-
-          // Send a POST request to the server with the form data
           fetch("http://localhost:8000/authors", {
             method: "POST",
             body: formData,
@@ -117,7 +114,4 @@ function addAuthor(){
             });
         });
 }
-
-window.addEventListener("load", fetchAuthors);
-
 searchInput?.addEventListener("input", handleSearchInput);

@@ -3,19 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books</title>
+    <title>Borrows</title>
     <link rel="stylesheet" href="styles/style.css" />
     <script src="assets/auth.js"></script>
   </head>
-  <body onload="fetchBooks()">
-    <style>
-      #pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-      }
-    </style>
+  <body onload="fetchBorrow()">
     <div>
       <nav>
         <div>
@@ -23,7 +15,7 @@
           <a href="books.html?page=1" id="books">Books</a>
           <a href="borrow.html?page=1" id="borrow">Borrow Book</a>
           <a href="users.html?page=1" id="users">Users</a>
-          <a href="addBooks.html" class="add">Add Books</a>
+          <a href="addBorrow.html" class="add">Add Borrow</a>
         </div>
         <div>
           <a href="#" id="logout" onclick="logout()">Logout</a>
@@ -39,21 +31,18 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Version</th>
-            <th>Author Name</th>
-            <th>Release Date</th>
-            <th>ISBN Code</th>
-            <th>SBN Code</th>
-            <th>Shelf Position</th>
+            <th>Student Mail</th>
+            <th>Book Name</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody id="booksTableBody"></tbody>
+        <tbody id="borrowTableBody"></tbody>
       </table>
 
       <div id="pagination"></div>
     </div>
-    <script src="assets/books.js"></script>
+    <script src="assets/borrow.js"></script>
   </body>
 </html>
