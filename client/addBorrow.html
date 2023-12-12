@@ -27,7 +27,12 @@
         <input type="email" id="user_id" name="user_id" required />
 
         <label for="book_id">Book:</label>
-        <select id="book_id" name="book_id" required></select>
+        <select
+          id="book_id"
+          name="book_id"
+          onclick="fetchBooks()"
+          required
+        ></select>
 
         <label for="borrow_date">Borrow Date:</label>
         <input type="date" id="borrow_date" name="borrow_date" required />
